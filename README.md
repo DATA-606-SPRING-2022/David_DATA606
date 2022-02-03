@@ -1,3 +1,3 @@
-# UMBC DATA606 Datascience Capstone Project
+# UMBC DATA606 Data Science Capstone Project
 
 
