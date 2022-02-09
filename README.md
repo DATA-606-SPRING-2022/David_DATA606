@@ -16,6 +16,7 @@
 ### What variables/measures do you plan to use in your analysis (variables should be tied to the questions in #3)?
 
 ### What kinds of techniques/models do you plan to use (for example, clustering, NLP, ARIMA, etc.)?
+Naïve Bayes, Logistic Regression, SVM and Decision Tree
 
 ### How do you plan to develop/apply ML and how you evaluate/compare the performance of the models?
 
