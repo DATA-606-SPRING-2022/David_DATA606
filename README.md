@@ -21,12 +21,24 @@ Many cities in the United States are implementing micromobility programs, includ
 
 ### Where do you get the data to analyze and help answer your questions (creditability of source, quality of data, size of data, attributes of data. etc.)?
 
-Many of the cities with micromobility programs make their usage data publicly available.   For example:
+#### Many of the cities with micromobility programs make their usage data publicly available.   For example:
 - New York City: https://ride.citibikenyc.com/system-data 
 - Austin, TX: https://data.austintexas.gov/Transportation-and-Mobility/Austin-MetroBike-Trips/tyfh-5r8s 
 - U.S. Bureau of Transportation Statistics has various resources: https://data.bts.gov/stories/s/fseh-ipec 
 
-The U.S. Bureau Labor Statistics publishes many datasets that could be useful:
+Note: The micromobility data elements captured can vary from program to program but generally include:
+- One record represents one trip (e.g., a bike trip from one point to another point).  Then, each record then generally includes:
+- Date/time of departure
+- Departure Location (Station Name and/or latitude & longitude coordinates)
+- Date/time of arrival at destination
+- Destination Location (Station Name and/or latitude & longitude coordinates)
+- Duration of trip
+- Type of transport used -- Pedal bike, e-bike, electric scooter
+- Type of customer - daily, monthly pass
+- Some provide the year of birth of the customer
+- Som provide the gender of the customer
+
+#### The U.S. Bureau Labor Statistics publishes many datasets that could be useful:
 - Unemployment data: https://www.bls.gov/bls/unemployment.htm 
 - Demographic data: https://www.bls.gov/bls/demographics.htm 
 - Wage information: https://www.bls.gov/bls/wages.htm 
