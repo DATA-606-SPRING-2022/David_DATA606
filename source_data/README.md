@@ -1,5 +1,6 @@
 # This folder stores original source data for the project.
 These datasets are original read-only copies
 
-- If some data is retrieved through API calls, make a note here about that
-- If data is too large for GitHub, include link to other cloud service where the file is maintained (or where it is stored/kept)
+### New York City Bikeshare Data
+This data was too large to upload to GitHub.  Therefore, the data was downloaded and used locally.  Each monthly file is about 100MB to 600MB. 
+The data was obtained from here: https://ride.citibikenyc.com/system-data
