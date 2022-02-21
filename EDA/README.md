@@ -18,11 +18,13 @@
     - Start latitude
     - Start longitude
     - End latitude
-    - End Longitude
+    - End longitude
     - Member or casual ride
 - Each monthly csv file ranged from about 100MB to 600MB
 
-### Review
+### Review and Preliminary Observations
 - Performed using Python in a Jupyter Notebook, found in file 'EDA.ipynb' in this folder
 - For preliminary review, downloaded the most recent 12 months of data for the period from February 2021 through January 2022
+- During this 1 year period, there were approximately 27.6 million trips
+- Performed some cleaning of the data.  For example, certain fields had some null values.  These represented a relatively small portion of the total data (about 100 thousand of the 27.6 million records)
 - 
