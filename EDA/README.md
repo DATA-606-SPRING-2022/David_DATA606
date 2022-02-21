@@ -39,7 +39,7 @@
 
 
 - Usage by Member Type is predominately members rather than those who are casual, meaning they pay for each trip without joining:
-- 
+
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/EDA/nyc_2021tripsbymembertype.png?raw=true' width='75%'>
 
 
