@@ -26,5 +26,9 @@
 - Performed using Python in a Jupyter Notebook, found in file 'EDA.ipynb' in this folder
 - For preliminary review, downloaded the most recent 12 months of data for the period from February 2021 through January 2022
 - During this 1 year period, there were approximately 27.6 million trips
-- Performed some cleaning of the data.  For example, certain fields had some null values.  These represented a relatively small portion of the total data (about 100 thousand of the 27.6 million records)
-- 
+- Performed some cleaning of the data.  For example, certain fields had some null values.  These represented a relatively small portion of the total data (about 100 thousand of the 27.6 million records).  These nulls were replaced with 0's (for numeric fields) and "" for string fields.
+- There were 1586 different Start Stations from which trips originated
+
+- When reviewed the number of trips per month over the 12 month period, it is clear that the highest usage occurs in the summer months with the least usage in the winter months.
+
+
