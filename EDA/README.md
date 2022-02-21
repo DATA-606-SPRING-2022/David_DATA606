@@ -30,6 +30,6 @@
 - There were 1586 different Start Stations from which trips originated
 
 - From review of the number of trips per month over the 12 month period, it is clear that the highest usage occurs in the summer months with the least usage in the winter months:
-   ![alt text](https://github.com/dfdatascience/David_DATA606/EDA/nyc_2021tripsbymonth.png?raw=true)
+   ![alt text](https://github.com/dfdatascience/David_DATA606/blob/main/EDA/nyc_2021tripsbymonth.png?raw=true)
 
 
