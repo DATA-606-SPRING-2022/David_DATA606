@@ -29,6 +29,7 @@
 - Performed some cleaning of the data.  For example, certain fields had some null values.  These represented a relatively small portion of the total data (about 100 thousand of the 27.6 million records).  These nulls were replaced with 0's (for numeric fields) and "" for string fields.
 - There were 1586 different Start Stations from which trips originated
 
-- When reviewed the number of trips per month over the 12 month period, it is clear that the highest usage occurs in the summer months with the least usage in the winter months.
+- From review of the number of trips per month over the 12 month period, it is clear that the highest usage occurs in the summer months with the least usage in the winter months:
+   ![alt text](https://github.com/dfdatascience/David_DATA606/EDA/imgs/nycbymonth.jpg?raw=true)
 
 
