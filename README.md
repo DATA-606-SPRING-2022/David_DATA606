@@ -1,5 +1,5 @@
 ## UMBC DATA 606 Data Science Capstone Project
-## Proposal -- Exploring Micromobility and Factors in Growth and Success of the Programs
+## Exploring Micromobility and Factors in Growth and Success of the Programs
 
 ### What is your issue of interest (provide sufficient background information)?
 Micromobility is a growing way in cities for the public to travel from place to place quickly and easily.  This includes pedal bicycles, e-bikes, and scooters that are generally made available for small rental fees per trip or through periodic paid passes.  The focus of this project would be to explore the factors (economic, geographic, weather, demographic) that result in the growth and success of micromobility programs by applying data science techniques.  
