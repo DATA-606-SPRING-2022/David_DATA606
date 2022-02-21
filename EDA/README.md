@@ -39,7 +39,7 @@
 
 
 - Usage by Member Type is predominately members rather than those who pay for each trip without joining:
-   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/EDA/nyc_2021tripsbymonth.png?raw=true' width='75%'>
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/EDA/nyc_2021tripsbymembertype.png?raw=true' width='75%'>
 
 
 
