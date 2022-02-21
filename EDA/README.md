@@ -38,9 +38,18 @@
 	- electric_bike:       507 trips
 
 
-- Usage by Member Type is predominately members rather than those who pay for each trip without joining:
+- Usage by Member Type is predominately members rather than those who are casual, meaning they pay for each trip without joining:
+- 
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/EDA/nyc_2021tripsbymembertype.png?raw=true' width='75%'>
 
+
+### Next Steps
+This was just a preliminary exploratory analysis to get started and get some initial understanding of the data for the largest city (NYC).  The analysis will be expanded significantly from here, including:
+- The time period will be expanded significantly from this single year period.  That is, the analysis will expand to at least 3 years of data.  Assuming the volume is consistent with this preliminary review, that will amount to about 80 million records just for NYC.
+- I will be looking to include at least 3 other micromobility programs for other cities.  Depending on the types of data elements tracked by each different city, this could present challenges in being able to have consistent features for analysis and for applying machine learning modeling for prediction.
+- Demographic data for each city reviewed will also be analyzed.  For example, this could include the average age, income level, population size, etc.
+- Other data related to economic conditions (such as unemployment rates) will also be obtained and analyzed in conjunction with the micromobility data.
+ 
 
 
 
