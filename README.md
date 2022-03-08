@@ -1,6 +1,7 @@
 # UMBC DATA 606 Data Science Capstone Project
 # Exploring Micromobility and Factors in Growth and Success of the Programs
 
+Video Presentation on EDA: https://youtu.be/F80b0GESftU
 Draft PowerPoint: https://github.com/dfdatascience/David_DATA606/blob/main/Presentations/PowerPoint-Micromobility-EDA.pptx
 
 ## What is your issue of interest (provide sufficient background information)?
