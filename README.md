@@ -1,31 +1,28 @@
 # UMBC DATA 606 Data Science Capstone Project
-# Exploring Micromobility and Factors in Growth and Success of the Programs
+## Exploring Micromobility and Factors in Growth and Success of the Programs
+__Spring 2022, Dr. Chaojie Wang__ <br />
+__David Fahnestock__ <br />
 
 Video Presentation on EDA: https://youtu.be/F80b0GESftU 
 
 PowerPoint: https://github.com/dfdatascience/David_DATA606/blob/main/Presentations/CapstoneSpring2022_PowerPointPresentation-Micromobility.pdf
 
-## What is your issue of interest (provide sufficient background information)?
+## Subject Overview
 Micromobility is a growing way in cities for the public to travel from place to place quickly and easily.  This includes pedal bicycles, e-bikes, and scooters that are generally made available for small rental fees per trip or through periodic paid passes.  The focus of this project would be to explore the factors (economic, geographic, weather, demographic) that result in the growth and success of micromobility programs by applying data science techniques.  
 
-*Note: This project’s focus is not specifically on the impacts of the Covid-19 pandemic on micromobility, but the pandemic may be one of many various factors that may be applicable to the broader factors explored.*  
+## Importance
+Many cities in the United States are implementing micromobility programs, including Chicago, New York City, and San Francisco.  It is not only a healthy way to travel but also can be beneficial to reduce city congestion and pollution from vehicular traffic.  It can also help reshape the way we think about travel in cities.
 
-## Why is this issue important to you and/or to others?
-Many cities in the United States are implementing micromobility programs, including New York, Washington DC, and Austin, Texas.  It is not only a healthy way to travel but also can be beneficial to reduce city congestion and pollution from vehicular traffic.  It can also help reshape the way we think about travel in cities.
+## Research Questions
+This project seeks to answer these questions:
+- What factors impact usage and growth of micromobility?
+- Can machine-learning be used to accurately:
+-- Predict growth or usage patterns in micromobility?
+-- Identify other cities where micromobility programs would have a high likelihood of success?
 
-## What questions do you have in mind and would like to answer?
-- Are there specific economic/socio-economic factors that impact the usage of micromobility?  Do unemployment rates, poverty rates, crime, and other economic factors have an impact?
-- Does geographic location impact the likelihood of success of a micromobility program?   Do cities in warmer climates tend to have higher growth?  Does the terrain (hills, flat) of the area impact usage or success?
-- Do demographics have an impact on growth and usage of micromobility?  Is usage higher in areas with younger populations?
-- Are there seasonal patterns in the usage of micromobility?  
-- Are there differences in usage patterns based on the types of micromobility (pedal bikes vs e-bikes vs scooters)?
-- After identifying key features, can growth or usage patterns in micromobility be predicted through machine learning techniques?  Which models perform best?  
-- Could machine learning be used to identify other cities where micromobility programs would have a high likelihood of success?
+## Datasets Involved
 
-
-## Where do you get the data to analyze and help answer your questions (creditability of source, quality of data, size of data, attributes of data. etc.)?
-
-### Many of the cities with micromobility programs make their usage data publicly available.   For example:
+### Micromobility Usage Data
 - New York City: https://ride.citibikenyc.com/system-data 
 - Austin, TX: https://data.austintexas.gov/Transportation-and-Mobility/Austin-MetroBike-Trips/tyfh-5r8s 
 - U.S. Bureau of Transportation Statistics has various resources: https://data.bts.gov/stories/s/fseh-ipec 
@@ -42,7 +39,7 @@ Note: The micromobility data elements captured can vary from program to program 
 - Some provide the year of birth of the customer
 - Som provide the gender of the customer
 
-### The U.S. Bureau Labor Statistics publishes many datasets that could be useful:
+### The U.S. Bureau Labor Statistics publishes many datasets that provide economicuseful:
 - Unemployment data: https://www.bls.gov/bls/unemployment.htm 
 - Demographic data: https://www.bls.gov/bls/demographics.htm 
 - Wage information: https://www.bls.gov/bls/wages.htm 
