@@ -21,8 +21,13 @@ This project seeks to answer these questions:
 	- Identify other cities where micromobility programs would have a high likelihood of success?
 
 ## About the Data Used
+
+### Micromobility Usage Data
 This project includes the detail micromobility usage data for each of the three cities [4].  The data is at the micromobility trip level, meaning each row of data represents one micromobility trip from one location to another location in the city. The data includes various elements, including the start and end date/time of each trip, the user's type (member or casual users), and other elements.  This project generally includes analysis of the period from 2019 through 2021, but expands the period in some instances during machine learning.  For the period from 2019 through 2021, there were over 90 million rows.
 
+The data elements provide in the data include:
+
+### Historic Economic and Weather Data
 The project also uses supplemental economic and historic weather data [5].  This is considered to identify whether those factors also contain useful features that can be used to predict or obtain a better understanding of the features that impact micromobility usage.
 
 These data sources are direct from the city websites (for usage data) or from governmental programs (unemployment and weather).  This helps ensure that the data are from reputable sources and are reliable.
