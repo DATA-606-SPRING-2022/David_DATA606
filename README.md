@@ -3,53 +3,37 @@
 __Spring 2022, Dr. Chaojie Wang__ <br />
 __David Fahnestock__ <br />
 
-Video Presentation on EDA: https://youtu.be/F80b0GESftU 
-
+Video Presentation: https://youtu.be/F80b0GESftU 
 PowerPoint: https://github.com/dfdatascience/David_DATA606/blob/main/Presentations/CapstoneSpring2022_PowerPointPresentation-Micromobility.pdf
 
 ## Subject Overview
-Micromobility is a growing way in cities for the public to travel from place to place quickly and easily.  This includes pedal bicycles, e-bikes, and scooters that are generally made available for small rental fees per trip or through periodic paid passes.  The focus of this project would be to explore the factors (economic, geographic, weather, demographic) that result in the growth and success of micromobility programs by applying data science techniques.  
+Micromobility is a growing way in cities for the public to travel from place to place quickly and easily.  This includes pedal bicycles, e-bikes, and scooters that are generally made available for small rental fees per trip or through periodic paid passes.  The focus of this project is to explore factors that result in, or can be used to predict, the growth and success of micromobility programs by applying data science techniques.  
 
-## Importance
-Many cities in the United States are implementing micromobility programs, including Chicago, New York City, and San Francisco.  It is not only a healthy way to travel but also can be beneficial to reduce city congestion and pollution from vehicular traffic.  It can also help reshape the way we think about travel in cities.
+The global micromobility market is projected to grow from $44 billion in 2020 to over $214 billion by 2030 [1].  Use of micromobility is not only a healthy way to travel but also can be beneficial to reduce city congestion and pollution from vehicular traffic.  It can also help reshape the way we think about travel in cities.
+
+Many cities in the United States are implementing micromobility programs.  This project focuses on analysis of three large city micromobility programs: (1) Chicago, Illinois; (2) New York City, New York; and (3) San Francisco, California. 
 
 ## Research Questions
 This project seeks to answer these questions:
 - What factors impact usage and growth of micromobility?
 - Can machine-learning be used to accurately:
--- Predict growth or usage patterns in micromobility?
--- Identify other cities where micromobility programs would have a high likelihood of success?
+	- Predict growth or usage patterns in micromobility?
+	- Identify other cities where micromobility programs would have a high likelihood of success?
 
-## Datasets Involved
+## About the Data Used
 
 ### Micromobility Usage Data
 - New York City: https://ride.citibikenyc.com/system-data 
 - Austin, TX: https://data.austintexas.gov/Transportation-and-Mobility/Austin-MetroBike-Trips/tyfh-5r8s 
-- U.S. Bureau of Transportation Statistics has various resources: https://data.bts.gov/stories/s/fseh-ipec 
 
-Note: The micromobility data elements captured can vary from program to program but generally include:
-- One record represents one trip (e.g., a bike trip from one point to another point).  Then, each record then generally includes:
-- Date/time of departure
-- Departure Location (Station Name and/or latitude & longitude coordinates)
-- Date/time of arrival at destination
-- Destination Location (Station Name and/or latitude & longitude coordinates)
-- Duration of trip
-- Type of transport used -- Pedal bike, e-bike, electric scooter
-- Type of customer - daily, monthly pass
-- Some provide the year of birth of the customer
-- Som provide the gender of the customer
-
-### The U.S. Bureau Labor Statistics publishes many datasets that provide economicuseful:
-- Unemployment data: https://www.bls.gov/bls/unemployment.htm 
-- Demographic data: https://www.bls.gov/bls/demographics.htm 
-- Wage information: https://www.bls.gov/bls/wages.htm 
-
-The National Weather Service for general climate information: https://www.weather.gov/ 
+### Economic and Weather Data
+- U.S. Bureau Labor Statistics (BLS) Unemployment data: https://www.bls.gov/bls/unemployment.htm 
+- National Oceanic and Atmospheric Administration (NOAA) Historic Weather Data: https://www.noaa.gov
 
 These data sources are generally from governmental programs and directly published for use.  It is expected the total amount of data used throughout the project could be millions of records (trips).
 
-## What will be your unit of analysis (for example, patient, organization, or country)? Roughly how many units (observations) do you expect to analyze?
-The analysis will primarily focus at the city level, through analysis of micromobility programs administered in multiple cities.  The planned focus is on micromobility programs in the United States.  However, if time permits, the analysis may be expanded to compare different countries.
+## Unit of Analysis
+The analysis focuses at the city level, through analysis of micromobility programs administered in multiple cities.  Additionally, the focus is on cities within the United States for the purpose of this project.
 
 With regard to the underlying data, the lowest level unit of analysis is on the trip detail.  That is, micromobility data is generally published in terms of one record per trip (from point A to point B). Therefore, the general unit of measure would be in terms of the volume of trips. It is expected this project would analyze millions of trips across multiple city micromobility programs.
 
