@@ -165,23 +165,48 @@ All three cities have more trips by members (monthly pass holders) than casual r
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_bymembertype.png' width='50%'>
 
 
-### Unemployment and Historic Weather Data
+### Unemployment Data
 See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/02_DATA606-Project-Master-EDA(b)_UnempAndWeather.ipynb
 
 The unemployment data for each of the three related states (Illinois, New York, California) was obtained from the Bureau Labor Statistics website.  The data provides the actual unemployment rates at each state by month.  As can be seen below, there was a sharp spike in unemployment rates around March 2020.  This marks when Covid-19 shutdowns were largely implemented across the country.  As a result, we see the sharp spike immediately from about 4 percent to about 16 percent.
 
-In comparing this chart to the micromobility usage chart, it is clear that there is no noticeable correlation between this large spike in unemployment and micromobility usage.  Therefore, it does not appear that use of unemployment data, at least for the period of this project's review, will be useful in predicting micromobility usage.
+In comparing the unemployment chart (bottom) to the micromobility usage chart (top), it is clear that there is no noticeable correlation between this large spike in unemployment and micromobility usage.  Therefore, it does not appear that use of unemployment data, at least for the period of this project's review, will be useful in predicting micromobility usage.
 
 
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_seasonallinechart.png' width='50%'>
    
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_unemploymentovertime.png' width='50%'>
 
+### Historic weather data
+See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/02_DATA606-Project-Master-EDA(b)_UnempAndWeather.ipynb
 
+In reviewing the high temperatures in each of the cities over the period of 2017 through 2021, it is clear that the temperatures follow a seasonal pattern as would be expected.  San Francisco fluctuates less than Chicago and New York City over the seasons.  
 
+Overall, these patterns in high temperature follow a similar pattern as micromobility usage over the seasons.
 
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_weatherhightemplinechart.png' width='50%'>
+   
+Precipitation levels fluctuate significantly in each city.  Chicago has the most snowfall.  San Francisco seems to have minimal precipitation in summers and no snow.  
+
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_weatherprecipbymonth.png' width='50%'>
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_weathersnowbymonth.png' width='50%'>
+   
+The below correlation matrix between micromobility usage and the various weather factors shows that there are strong positive correlations between micromobility usage (number of trips and duration) and the high temperature (TMAX).  As expected, there are negative correlations between micromobility usage and precipitation (PRCP), snow(SNWD), and wind (AWND, WSF5)
+
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_weathertousagecorrelationmatrix.png' width='50%'>
+
+   
 ## Feature Selection
 Based on exploratory data analysis, the following feature determinations were made for consideration during machine learning:
+
+| Feature(s) | To be Used for Machine Learning? | Reasoning |
+| --- | --- | --- |
+| Median Income Level | No | Changes in Median income occur over long periods of time.  This analysis is for a relatively short period of time.  Perhaps once there are decades of data, this would be suitable. | 
+| Subscriber Type, Type of Bike, Age, Gender | No | A considerable portion of the data had nulls for these features.  Therefore, they will not be reliable for ML. |
+| Unemployment Rates | No | The sharp increase in unemployment during the pandemic does not appear to impact micromobility usage.  Including this would likely negatively impact the accuracy of ML models. |
+| Trip Date | Yes | The date of trips will be a key element in ML models for time series based predictions. |
+| Trip Count and Duration | Yes | Focus will be on Trip count as the target feature for prediction. |
+| Weather Conditions | Yes | Weather conditions appear to impact micromobility usage. |
 
 
 
