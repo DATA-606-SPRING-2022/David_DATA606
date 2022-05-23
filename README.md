@@ -3,7 +3,7 @@
 ## Spring 2022, Dr. Chaojie Wang
 ## David Fahnestock
 
-Video Presentation: <a href='https://youtu.be/F80b0GESftU'>Video Link</a><br />
+Video Presentation: <a href='https://youtu.be/VnXqnem_Cl8'>Video Link</a><br />
 PowerPoint: <a href='https://github.com/dfdatascience/David_DATA606/blob/main/Presentations/CapstoneSpring2022_PowerPointPresentation-Micromobility.pdf'>Slides</a><br />
 
 ## Subject Overview
@@ -275,6 +275,8 @@ Based on the Normalized Root Mean Squared to assess performance, we noted the mo
 
 
 ### Application of LSTM Model
+See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/05_DATA606-Project-Master-LSTM.ipynb
+
 
 
 
