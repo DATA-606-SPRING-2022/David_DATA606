@@ -50,8 +50,41 @@ Data elements provided in the data include:
 
 </td></tr> </table>
 
+It is noted that the additional fields noted above are not always present in the data.  It was also found that some cities tracked the fields during a portion of the period analyzed but not the entire period.  These factors reduce the usefulness of these features for analysis purposes.
+
+Derived fields were also calculated to be used for analysis purposes.  These allow for the trips to be grouped in different time dimensions.
+
+| Derived Data Fields | 
+| --- |
+| Duration of Trip |
+| Day of Trip |
+| Month of Trip |
+| Year of Trip |
+
 ### Historic Economic and Weather Data
-The project also uses supplemental economic and historic weather data [5].  This is considered to identify whether those factors also contain useful features that can be used to predict or obtain a better understanding of the features that impact micromobility usage.
+The project also uses supplemental economic (unemployment data) and historic weather data.  The source of these data are from the U.S. Bureau Labor Statistics (BLS) and the U.S. National Oceanic and Atmospheric Administration (NOAA) [5].  These data are considered to identify whether those factors also contain useful features that can be used to predict or obtain a better understanding of the features that impact micromobility usage.  Data elements include:
+
+<table>
+<tr><th>Unemployment Data</th><th>NOAA Daily Historic Weather Data</th></tr>
+<tr valign='top'><td>
+
+| Field | 
+| --- |
+| State |
+| Year |
+| Month |
+| Unemployment Rate |
+
+</td><td>
+	
+| Field | 
+| --- |
+| City |
+| High Temperature |
+| Average and Peak 5 second Wind Speed|
+| Precipitation and Snow Amounts |
+
+</td></tr> </table>
 
 These data sources are direct from the city websites (for usage data) or from governmental programs (unemployment and weather).  This helps ensure that the data are from reputable sources and are reliable.
 
@@ -60,26 +93,37 @@ The analysis focuses at the city level, through analysis of micromobility progra
 
 With regard to the underlying data, the lowest level unit of measure is on the trip detail.  That is, micromobility data is generally published in terms of one record per trip (from point A to point B). Therefore, the general unit of measure would be in terms of the volume of trips. 
 
+## Research Process
+This project follows this general research process
+1. Obtain and Clean Micromobility Data for Multiple Cities
+2. Perform Exploratory Data Analysis
+3. Identify Key Features
+4. Train and test machine learning models to predict usage and growth
+5. Evaluate accuracy and develop conclusions
+
+Python, with use of Jupyter Notebooks, was used significantly throughout all stages of the project.
+
+## Data Cleansing and Preparation Challenges
+This project included significant data cleaning and preparation challenges.  In general, each city publishes micromobility usage in monthly flat files.  Key challenges included:
+
+* Merging data from different time periods
+* Field layout changes within each city over time
+* Cities each track different data elements
+* Significant number of nulls in data fields impacting usefulness
+* Sheer volume of data, resulting in long processing times, and exceedingly high demands on computer resources
+
+To help overcome these challenges, various helper functions were implemented.  Also, after exploratory data analysis, data was further pre-aggregated with only the features selected.
+
+See Jupyter Notebook use for data cleaning and preparation: 
+https://github.com/dfdatascience/David_DATA606/blob/main/python/03_DATA606-Project-Master-CleanForML.ipynb
+
+
 
 ## Exploratory Data Analysis
+See related Jupyter Notebooks:
+* EDA on Micromobility Data: https://github.com/dfdatascience/David_DATA606/blob/main/python/01_DATA606-Project-Master-EDA.ipynb
+* EDA on Unemployment and Weather Data: https://github.com/dfdatascience/David_DATA606/blob/main/python/02_DATA606-Project-Master-EDA(b)_UnempAndWeather.ipynb
 
-### Data Description
-- Each record represents one trip, meaning a bike trip from one station to another station within the city
-- Data Elements for the period reviewed are:
-    - Ride ID
-    - Rideable type
-    - Started at
-    - Ended at
-    - Start station name
-    - Start station ID
-    - End station name
-    - End station ID
-    - Start latitude
-    - Start longitude
-    - End latitude
-    - End longitude
-    - Member or casual ride
-- Each monthly csv file ranged from about 100MB to 600MB
 
 ### Review and Preliminary Observations
 - Performed using Python in a Jupyter Notebook, found here: https://github.com/dfdatascience/David_DATA606/blob/main/python/DATA606-Project-EDA-Combined.ipynb
