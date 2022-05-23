@@ -210,16 +210,63 @@ Based on exploratory data analysis, the following feature determinations were ma
 
 
 
-
 ## Machine Learning Models
 In identifying appropriate machine learning models, the focus is on models that have been found to work well for time-series based predictions as they are suitable for this project in predicting future micromobility usage and growth. 
 
 Based on review of various machine learning models, these two machine learning models were selected:
-1. ARIMA – This is an auto-regressive machine learning model that provides unique benefits for forecasting based on time series data.  For example, a research paper utilized ARIMA to effectively forecast inflation in Ireland [2].  ARIMA is a univariate time-series analysis model.  
+* <b>AutoRegressive Integrated Moving Average (ARIMA)</b> – This is an auto-regressive machine learning model that provides unique benefits for forecasting based on time series data.  For example, a research paper utilized ARIMA to effectively forecast inflation in Ireland [2].  Seasonal ARIMA (SARIMA) is a variation that accounts for seasonal patterns.  ARIMA is a univariate time-series analysis model.  
  
-3. Long Short-Term Memory (LSTM) Neural Network – LSTM uses a recurrent neural network and has been found to be suitable for time series based forecasting.  It was found in research to perform well for stock price prediction and where there are multivariate input [2].  LSTM provides for multi-variate analysis.  This will allow for multiple features to be used in the model to help improve performance of the predictions.
+* <b>Long Short-Term Memory (LSTM) Neural Network</b> – LSTM uses a recurrent neural network and has been found to be suitable for time series based forecasting.  It was found in research to perform well for stock price prediction and where there are multivariate input [2].  LSTM provides for multi-variate analysis.  This will allow for multiple features to be used in the model to help improve performance of the predictions.
 
-For the purpose of this project, the target feature (what will be predicted) is usage for each city in terms of the number of micromobility trips.
+
+### Application of ARIMA Model
+See related Jupyter Notebook: 
+https://github.com/dfdatascience/David_DATA606/blob/main/python/04_DATA606-Project-Master-ARIMA.ipynb
+
+In applying the ARIMA Model, we must consider whether there is a seasonal element to our data.  As determined during EDA, we noted strong seasonal patterns for New York City and Chicago.  San Francisco had less of a seasonal pattern.
+  
+Our target feature for prediction will be the number of micromobility trips.  As ARIMA is a univariate analysis, the only input will be the time (month) and the number of trips
+
+#### Determine Parameters
+SARIMA will be used for predicting usage for New York City and Chicago.  We will apply ARIMA and SARIMA to San Francisco.  SARIMA requires 7 elements to train the model:
+SARIMA (p,d,q)(P,D,Q)m
+
+* p = Trend autoregression order
+* d = Trend difference order
+* q = Trend moving average order
+* P = Seasonal autoregressive order
+* D = Seasonal difference order
+* Q = Seasonal moving average order
+* m = The number of time steps for a single seasonal period
+
+Below we use Chicago as the example of the process in determining the parameters.  This will describe the process for determining p, d, q, and m.  The seasonal parameters are not illustrated.  The other cities followed a similar process.  
+
+For determining p, the ACF plot is used.  From review of the plot, we will approximate <b>p to be 2</b> as it is the maximum lag with a value in th ACF plot external to the confidence interval shaded in blue.
+
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima01_chicagoacfplot.png' width='50%'>
+
+To determine d, the Dickey-Fuller test was used to test for Stationarity of the dataset.  For stationarity, the p value returned by the Dickey-Fuller test must be <= 0.05.  It was determined <b>d will be 0</b> as p was 5.94e-05 on the first test iteration.
+
+To determine q, the PACF plot was used.  From the plot, we will approximate <b> q to be 2</b> as it is the maximum lag external to the confidence interval shaded in blue.  Additionally, <b>m will be 12</b> which is 12 months as that is when the seasonal pattern repeats.
+
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima01_chicagopacfplot.png' width='50%'>
+
+#### ARIMA Training and Results
+
+Using the parameters for each city, training of the model used the first 24 months of data and testing was done on the remaining 12 months of data for the period from 2019 through 2021.  The performance using this time period was poor.  For example, below shows a plot of the prediction for Chicago.  As can be seen, the prediction in 2021 was not accurate.  
+
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima03_chicagoprelimresults.png' width='50%'>
+   
+Upon further analysis, it was determined that a larger period of time was necessary to train the model.  Therefore, the time period was expanded back to 2017 through 2021, expanding from a three year to a five year period.  The model performed significantly better with the longer period of time.
+
+For each city, the model was trained on the first 4 years of data and tested on the final year.  The results are shown below.
+
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima04_chicagofinalprediction.png' width='50%'>
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima04_nycfinalprediction.png' width='50%'>      
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima04_sffinalprediction.png' width='50%'>
+  
+
+
 
 
 
