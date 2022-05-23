@@ -13,6 +13,7 @@ Use of micromobility is not only a healthy way to travel but also can be benefic
 
 The focus of this project is to explore factors that result in, or can be used to predict, the growth and success of micromobility programs by applying data science techniques.  The intent of this project is to better understand usage patterns of micromobility and which factors are most relevant to predict usage, growth, and the success of micromobility programs.  Ideally, the research results of this project could help in determining methods to evaluate and identify other cities that could benefit from micromobility programs.
 
+
 ## Research Questions
 This project seeks to answer these questions:
 - What factors impact usage and growth of micromobility?
@@ -114,18 +115,31 @@ This project included significant data cleaning and preparation challenges.  In 
 
 To help overcome these challenges, various helper functions were implemented.  Also, after exploratory data analysis, data was further pre-aggregated with only the features selected.
 
-See Jupyter Notebook use for data cleaning and preparation: 
+See Jupyter Notebook used for data cleaning and preparation: 
 https://github.com/dfdatascience/David_DATA606/blob/main/python/03_DATA606-Project-Master-CleanForML.ipynb
 
 
 
 ## Exploratory Data Analysis
-See related Jupyter Notebooks:
-* EDA on Micromobility Data: https://github.com/dfdatascience/David_DATA606/blob/main/python/01_DATA606-Project-Master-EDA.ipynb
+
 * EDA on Unemployment and Weather Data: https://github.com/dfdatascience/David_DATA606/blob/main/python/02_DATA606-Project-Master-EDA(b)_UnempAndWeather.ipynb
 
+### Overview of City Demographics
 
-### Review and Preliminary Observations
+| Metric | Chicago | New York City | San Francisco |
+| --- | --- | --- | --- |
+| Population (2020) | 2,746,388 | 8,804,190 | 873,965 |
+| Median Household Income | $62,097 | $67,046 | $119,136 |
+| Median Age | 34.8 | 36.9 | 38.3 |
+
+Source: census.gov
+
+The above general demographic information for each city was used to get a general initial understanding of the cities.  In consideration of this information, the factors of median household income and median age are useful for understanding general information.  However, these data elements do not appear to have specific use for this project given the relatively small period of time of analysis.  That is, these elements are slowly changing attributes of the cities that may be more useful over a long period of time (decades) at a macro-level.  Therefore, these will note be considered for our analysis purposes. 
+
+
+### Micromobility Usage
+See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/01_DATA606-Project-Master-EDA.ipynb
+
 - Performed using Python in a Jupyter Notebook, found here: https://github.com/dfdatascience/David_DATA606/blob/main/python/DATA606-Project-EDA-Combined.ipynb
 - For preliminary review, downloaded the most recent 12 months of data for the period from February 2021 through January 2022
 - During this 1 year period, there were approximately 27.6 million trips
