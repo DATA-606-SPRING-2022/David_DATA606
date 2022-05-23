@@ -111,6 +111,7 @@ This project included significant data cleaning and preparation challenges.  In 
 * Field layout changes within each city over time
 * Cities each track different data elements
 * Significant number of nulls in data fields impacting usefulness
+* Joining disparate datasets (for example, micromobility data with weather data)
 * Sheer volume of data, resulting in long processing times, and exceedingly high demands on computer resources
 
 To help overcome these challenges, various helper functions were implemented.  Also, after exploratory data analysis, data was further pre-aggregated with only the features selected.
@@ -121,8 +122,6 @@ https://github.com/dfdatascience/David_DATA606/blob/main/python/03_DATA606-Proje
 
 
 ## Exploratory Data Analysis
-
-* EDA on Unemployment and Weather Data: https://github.com/dfdatascience/David_DATA606/blob/main/python/02_DATA606-Project-Master-EDA(b)_UnempAndWeather.ipynb
 
 ### Overview of City Demographics
 
@@ -158,6 +157,11 @@ See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blo
 - Usage by Member Type is predominately members rather than those who are casual, meaning they pay for each trip without joining:
 
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/EDA/nyc_2021tripsbymembertype.png?raw=true' width='75%'>
+
+
+### Unemployment and Historic Weather Data
+See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/02_DATA606-Project-Master-EDA(b)_UnempAndWeather.ipynb
+
 
 
 
