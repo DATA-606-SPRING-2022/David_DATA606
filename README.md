@@ -249,7 +249,7 @@ To determine d, the Dickey-Fuller test was used to test for Stationarity of the 
 
 To determine q, the PACF plot was used.  From the plot, we will approximate <b> q to be 2</b> as it is the maximum lag external to the confidence interval shaded in blue.  Additionally, <b>m will be 12</b> which is 12 months as that is when the seasonal pattern repeats.
 
-   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima01_chicagopacfplot.png' width='50%'>
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima02_chicagopacfplot.png' width='50%'>
 
 #### ARIMA Training and Results
 
@@ -262,11 +262,19 @@ Upon further analysis, it was determined that a larger period of time was necess
 For each city, the model was trained on the first 4 years of data and tested on the final year.  The results are shown below.
 
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima04_chicagofinalprediction.png' width='50%'>
-   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima04_nycfinalprediction.png' width='50%'>      
-   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima04_sffinalprediction.png' width='50%'>
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima05_nycfinalprediction.png' width='50%'>      
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima06_sffinalprediction.png' width='50%'>
   
+Based on the Normalized Root Mean Squared to assess performance, we noted the model performed relatively well for Chicago and New York City.  The model did not perform as well for San Francisco.  Of note, for San Francisco, both ARIMA and SARIMA were attempted and neither performed well.  The below for San Francisco represents the results of the SARIMA, which still performed a little better for San Francisco.  The below results represent those for the SARIMA model.
+
+| Rank | City | NRMSE | Notes |
+| --- | --- | --- | --- |
+| 1 | Chicago | 0.2789 | Seasonal usage with growth in 2021 |
+| 2 | New York City | 0.2849 | Similar usage pattern to Chicago |
+| 3 | San Francisco | 0.5279 | Less seasonal pattern with unusual spike in usage in early 2020 |
 
 
+### Application of LSTM Model
 
 
 
