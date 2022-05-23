@@ -10,3 +10,11 @@ The data was obtained from here: https://ride.divvybikes.com/system-data
 
 ### San Francisco Bikeshare Data
 The data was obtained from here: https://www.lyft.com/bikes/bay-wheels/system-data
+
+### U.S. Bureau Labor Statistics (BLS) Unemployment Data
+This data includes historic unemployment rates by month at the State level.
+The data was obtained from here: https://www.bls.gov/bls/unemployment.htm
+
+### National Oceanic and Atmospheric Administration (NOAA) Historic Weather Data
+This data includes historic weather conditions (such as high temperature, precipitation, snowfall, and wind speed) by city by day.
+The data was obtained from here: https://www.noaa.gov
