@@ -16,7 +16,7 @@ The focus of this project is to explore factors that result in, or can be used t
 
 ## Research Questions
 This project seeks to answer these questions:
-- What factors impact usage and growth of micromobility?
+- What factors impact usage and growth of micromobility?
 - Can machine-learning be used to accurately:
 	- Predict growth or usage patterns in micromobility?
 	- Identify other cities where micromobility programs would have a high likelihood of success?
@@ -24,7 +24,7 @@ This project seeks to answer these questions:
 ## About the Data Used
 
 ### Micromobility Usage Data
-This project includes the detail micromobility usage data for each of the three cities [4].  The data is at the micromobility trip level, meaning each row of data represents one micromobility trip from one location to another location in the city. The data includes various elements, including the start and end date/time of each trip, the user's type (member or casual users), and other elements.  This project generally includes analysis of the period from 2019 through 2021, but expands the period in some instances during machine learning.  For the period from 2019 through 2021, there were over 90 million rows.
+This project includes the detail micromobility usage data for each of the three cities [4].  The data is at the micromobility trip level, meaning each row of data represents one micromobility trip from one location to another location in the city. The data includes various elements, including the start and end date/time of each trip, the user's type (member or casual users), and other elements.  This project generally includes analysis of the period from 2019 through 2021, but expands the period in some instances during machine learning.  For the period from 2019 through 2021, there were approximately 90 million rows.
 
 Data elements provided in the data include:
 <table>
@@ -63,7 +63,7 @@ Derived fields were also calculated to be used for analysis purposes.  These all
 | Year of Trip |
 
 ### Historic Economic and Weather Data
-The project also uses supplemental economic (unemployment data) and historic weather data.  The source of these data are from the U.S. Bureau Labor Statistics (BLS) and the U.S. National Oceanic and Atmospheric Administration (NOAA) [5].  These data are considered to identify whether those factors also contain useful features that can be used to predict or obtain a better understanding of the features that impact micromobility usage.  Data elements include:
+The project also uses supplemental economic (unemployment data) and historic weather data.  The source of these data are from the U.S. Bureau Labor Statistics (BLS) and the U.S. National Oceanic and Atmospheric Administration (NOAA) [5].  These data are considered to identify whether those factors also can be used to predict or obtain a better understanding of the features that impact micromobility usage.  Data elements include:
 
 <table>
 <tr><th>Unemployment Data</th><th>NOAA Daily Historic Weather Data</th></tr>
@@ -133,7 +133,7 @@ https://github.com/dfdatascience/David_DATA606/blob/main/python/03_DATA606-Proje
 
 Source: census.gov
 
-The above general demographic information for each city was used to get a general initial understanding of the cities.  In consideration of this information, the factors of median household income and median age are useful for understanding general information.  However, these data elements do not appear to have specific use for this project given the relatively small period of time of analysis.  That is, these elements are slowly changing attributes of the cities that may be more useful over a long period of time (decades) at a macro-level.  Therefore, these will note be considered for our analysis purposes. 
+The above general demographic information for each city was used to get a general initial understanding of the cities.  In consideration of this information, the factors of median household income and median age are useful for understanding general information.  However, these data elements do not appear to have specific use for this project given the relatively small period of time of analysis.  That is, these elements are slowly changing attributes of the cities that may be more useful over a long period of time (decades) at a macro-level.  Therefore, these will not be considered for our analysis purposes. 
 
 
 ### Micromobility Usage
@@ -168,7 +168,7 @@ All three cities have more trips by members (monthly pass holders) than casual r
 ### Unemployment Data
 See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/02_DATA606-Project-Master-EDA(b)_UnempAndWeather.ipynb
 
-The unemployment data for each of the three related states (Illinois, New York, California) was obtained from the Bureau Labor Statistics website.  The data provides the actual unemployment rates at each state by month.  As can be seen below, there was a sharp spike in unemployment rates around March 2020.  This marks when Covid-19 shutdowns were largely implemented across the country.  As a result, we see the sharp spike immediately from about 4 percent to about 16 percent.
+The unemployment data for each of the three related states (Illinois, New York, California) was obtained from the Bureau Labor Statistics website.  The data provides the actual unemployment rates at each state by month.  As can be seen below, there was a sharp spike in unemployment rates around March 2020.  This marks when Covid-19 shutdowns were largely implemented across the country.  As a result, we see the sharp spike in unemployment immediately in March 2020, increasing from about 4 percent to about 16 percent.
 
 In comparing the unemployment chart (bottom) to the micromobility usage chart (top), it is clear that there is no noticeable correlation between this large spike in unemployment and micromobility usage.  Therefore, it does not appear that use of unemployment data, at least for the period of this project's review, will be useful in predicting micromobility usage.
 
@@ -182,7 +182,7 @@ See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blo
 
 In reviewing the high temperatures in each of the cities over the period of 2017 through 2021, it is clear that the temperatures follow a seasonal pattern as would be expected.  San Francisco fluctuates less than Chicago and New York City over the seasons.  
 
-Overall, these patterns in high temperature follow a similar pattern as micromobility usage over the seasons.
+Overall, these patterns in high temperature follow a similar pattern as micromobility usage over the seasons.  The below chart shows the monthly average of the actual daily high temperatures.
 
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_weatherhightemplinechart.png' width='50%'>
    
@@ -202,7 +202,7 @@ Based on exploratory data analysis, the following feature determinations were ma
 | Feature(s) | To be Used for Machine Learning? | Reasoning |
 | --- | --- | --- |
 | Median Income Level | No | Changes in Median income occur over long periods of time.  This analysis is for a relatively short period of time.  Perhaps once there are decades of data, this would be suitable. | 
-| Subscriber Type, Type of Bike, Age, Gender | No | A considerable portion of the data had nulls for these features.  Therefore, they will not be reliable for ML. |
+| Subscriber Type, Type of Bike, Age, Gender | No | A considerable portion of the data had nulls for these features or the features did not provide additional useful information for prediction.  Therefore, they will not be reliable for ML. |
 | Unemployment Rates | No | The sharp increase in unemployment during the pandemic does not appear to impact micromobility usage.  Including this would likely negatively impact the accuracy of ML models. |
 | Trip Date | Yes | The date of trips will be a key element in ML models for time series based predictions. |
 | Trip Count and Duration | Yes | Focus will be on Trip count as the target feature for prediction. |
@@ -241,7 +241,7 @@ SARIMA (p,d,q)(P,D,Q)m
 
 Below we use Chicago as the example of the process in determining the parameters.  This will describe the process for determining p, d, q, and m.  The seasonal parameters are not illustrated.  The other cities followed a similar process.  
 
-For determining p, the ACF plot is used.  From review of the plot, we will approximate <b>p to be 2</b> as it is the maximum lag with a value in th ACF plot external to the confidence interval shaded in blue.
+For determining p, the ACF plot is used.  From review of the plot, we will approximate <b>p to be 2</b> as it is the maximum lag with a value in the ACF plot external to the confidence interval shaded in blue.
 
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima01_chicagoacfplot.png' width='50%'>
 
@@ -265,7 +265,7 @@ For each city, the model was trained on the first 4 years of data and tested on 
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima05_nycfinalprediction.png' width='50%'>      
    <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/arima06_sffinalprediction.png' width='50%'>
   
-Based on the Normalized Root Mean Squared to assess performance, we noted the model performed relatively well for Chicago and New York City.  The model did not perform as well for San Francisco.  Of note, for San Francisco, both ARIMA and SARIMA were attempted and neither performed well.  The below for San Francisco represents the results of the SARIMA, which still performed a little better for San Francisco.  The below results represent those for the SARIMA model.
+Based on the Normalized Root Mean Squared Error (NRMSE) to assess performance, we noted the model performed relatively well for Chicago and New York City.  The model did not perform as well for San Francisco.  Of note, for San Francisco, both ARIMA and SARIMA were attempted and neither performed well.  The below for San Francisco represents the results of the SARIMA, which still performed a little better for San Francisco.  The below results represent those for the SARIMA model.
 
 | Rank | City | NRMSE | Notes |
 | --- | --- | --- | --- |
@@ -277,10 +277,76 @@ Based on the Normalized Root Mean Squared to assess performance, we noted the mo
 ### Application of LSTM Model
 See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/05_DATA606-Project-Master-LSTM.ipynb
 
+LSTM uses a recurrent neural network (RNN) and is useful time series multivariate analysis, in contrast with ARIMA which is univariate analysis.
 
+Based on EDA, the following features will be used:
+| Feature | Notes |
+| --- | ---|
+| Date of Trips | Analysis will be done with micromobility usage aggregated by day |
+| Weather conditions | Weather conditions from NOAA on the same day within th city, including temperature, precipitation, and wind conditions. |
+| Target Feature: Number of Trips | The model will be used to predict the number of trips |
+
+
+To prepare the data for this model, the micromobility usage data aggregated by day was merged with the NOAA weather data by day.  The final dataframe (example below) was then used to train and test the LSTM model.
+      
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/lstm07_dataframe.png' width='50%'>
+   
+ * AWND = Average Wind Speed
+ * PRCP = Amount of precipitation
+ * SNWD = Amount of snow
+ * TMAX = High Temperature
+ * WSF5 = Max 5 second wind speed
+
+#### Training the LSTM Model
+
+Training was done on the first 4 years and testing was on the final year.  This was chosen to be consistent with the training done on the ARIMA model for comparison purposes.  In training, 50 epochs were used for each city.  The below image shows the loss per epoch for each of the three cities.  These follow the expected curve with the loss being reduced with each epoch.
+
+<table><tr>
+<td align="center">Chicago<br /><img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/lstm01_chicagoloss.png' width='100%'></td>
+<td align="center">NYC<br /><img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/lstm02_nycloss.png' width='100%'></td>
+<td align="center">San Francisco<br /><img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/lstm03_sfloss.png' width='100%'></td>
+</tr>
+</table>
+
+#### LSTM Results
+
+The performance of LSTM far exceeded the performance of ARIMA.  Below shows the prediction for the test portion of the data for each city.  In each, it follows the actual very closely.  
+   
+<table><tr>
+<td align="center">Chicago<br /><img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/lstm04_chicagoprediction.png' width='100%'></td>
+<td align="center">NYC<br /><img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/lstm05_nycprediction.png' width='100%'></td>
+<td align="center">San Francisco<br /><img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/lstm06_sfprediction.png' width='100%'></td>
+</tr>
+</table>
+
+Using Normalized Root Mean Squared Error (NRMSE) to evaluate performance, we found the following.  This shows strong performance for all three cities.  
+
+| Rank | City | NRMSE |
+| --- | --- | --- |
+| 1 | San Francisco | 0.0807 |
+| 2 | Chicago | 0.0847 |
+| 3 | New York City | 0.1095 |
+
+Based on these results, the following are considerations:
+* There is a risk of overfitting.  Additional train/tests could be done to reduce the portion of the data used for training versus testing.  
+* The portion used in this case (4 of the 5 years for training and 1 year for testing) was consistent with that used for ARIMA for comparative purposes.  LSTM performed far better than ARIMA.
+* LSTM as a multivariate analysis was able to utilize many features for training (primarily weather related) that seem to have contributed to the higher performance of the LSTM model over the ARIMA model.
 
 
 ## Conclusions
+In conclusion, through the work on this project, we note the following with regard to the original questions:
+- What factors impact usage and growth of micromobility?
+	- Past usage can be used to predict future usage.  This was demonstrated through the results of ARIMA and LSTM analysis.
+	- Weather conditions are correlated with usage.  Generally, warmer and nicer weather results in higher usage.  This was evident in the better performance in the LSTM model (which was able to factor in weather conditions) as compared to the ARIMA model.
+	- Unemployment rates do not appear to significantly impact usage, at least during the period of this project's review.  However, this appears largely due to the Covid-19 pandemic that resulted in a sharp increase in unemployment rates.
+
+- Can machine-learning be used to accurately:
+	- Predict growth or usage patterns in micromobility?
+		- Yes, application of ARIMA and LSTM have demonstrated that machine learning can be used effectively to predict usage or growth of micromobility.  Note that LSTM's strong performance appears to be related to use of weather-related factors.  Therefore, it should be noted that the ability for long-range forecasts in micromobility usage using similar approaches to this project would require that weather forecasting also be highly accurate far into the future.  This may be a limiting factor.  Future work could expand on the work of this project to identify additional features that would improve the ability to do long-range forecasting.
+
+	- Identify other cities where micromobility programs would have a high likelihood of success?
+		- From the scope of the machine learning models applied, it cannot be definitively concluded whether machine learning could accurately identify cities where micromobility programs would be successful.  Certain factors, such as cities that have warmer or nicer climates may be a general indicator that micromobility may be successful.   
+
 
 
 ## References
