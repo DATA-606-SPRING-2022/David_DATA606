@@ -139,28 +139,43 @@ The above general demographic information for each city was used to get a genera
 ### Micromobility Usage
 See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/01_DATA606-Project-Master-EDA.ipynb
 
-- Performed using Python in a Jupyter Notebook, found here: https://github.com/dfdatascience/David_DATA606/blob/main/python/DATA606-Project-EDA-Combined.ipynb
-- For preliminary review, downloaded the most recent 12 months of data for the period from February 2021 through January 2022
-- During this 1 year period, there were approximately 27.6 million trips
-- Performed some cleaning of the data.  For example, certain fields had some null values.  These represented a relatively small portion of the total data (about 100 thousand of the 27.6 million records).  These nulls were replaced with 0's (for numeric fields) and "" for string fields.
-- There were 1586 different Start Stations from which trips originated
+#### Total Usage by City
+For the period from January 2019 through January 2022, New York City had the highest volume of trips, which totaled 70 million.  Chicago had 13 million trips and San Francisco had about 7 million trips.
 
-- From review of the number of trips per month over the 12 month period, it is clear that the highest usage occurs in the summer months with the least usage in the winter months:
-   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/EDA/nyc_2021tripsbymonth.png?raw=true' width='75%'>
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_totalbycity_Jan2019toJan2022.png' width='50%'>
+   
+#### Trips by Year
+There was a small decrease in usage in 2020.  This could be due to the onset of the Covid 19 pandemic.  It is also evident that there was a significant increase in usage in 2021 that far surpasses both 2019 and 2020.  Finally, San Francisco's usage remained relatively steady throughout the time period.
 
-- Usage by Bike Type is dominated by Classic Bikes (not required to be docked) followed by Docked Bikes.  E-Bikes (that have electric motors) represent a miniscule portion of usage.  This appears to be due to the very limited number of e-bikes available.  From some online resources, it indicated about 250 e-bikes were introduced in early 2020.  Overall: 
-    - classic_bike: 18,432,181 trips
-	- docked_bike:   9,184,134 trips
-	- electric_bike:       507 trips
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_totaltripsbyyear.png' width='50%'>
 
+#### Seasonal Patterns in Usage
+Usage was clearly seasonal for both New York and Chicago, and both had significant increases in 2021.  San Francisco is relatively consistent throughout the seasons. 
 
-- Usage by Member Type is predominately members rather than those who are casual, meaning they pay for each trip without joining:
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_seasonallinechart.png' width='50%'>
+   
+#### Type of Bikes Used
+There was a large number of instances in the data where no type (nulls) was specified (see far left of the chart).  It is also noted that e-bike usage is minimal in New York City but is significant in San Francisco.  From review, New York City offers some e-bikes but it is very minimal at this point.  We note that classic bikes are predominant in New York City.  Due to the high number of nulls in this field, it does not appear it will be useful in our further machine learning work.
 
-   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/EDA/nyc_2021tripsbymembertype.png?raw=true' width='75%'>
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_bytypeofbike.png' width='50%'>
+   
+#### Types of Users
+All three cities have more trips by members (monthly pass holders) than casual riders (day passes).  New York City's usage by members far exceeds casual riders.  San Francisco is nearly even between members and casual riders.
+
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_bymembertype.png' width='50%'>
 
 
 ### Unemployment and Historic Weather Data
 See related Jupyter Notebook: https://github.com/dfdatascience/David_DATA606/blob/main/python/02_DATA606-Project-Master-EDA(b)_UnempAndWeather.ipynb
+
+The unemployment data for each of the three related states (Illinois, New York, California) was obtained from the Bureau Labor Statistics website.  The data provides the actual unemployment rates at each state by month.  As can be seen below, there was a sharp spike in unemployment rates around March 2020.  This marks when Covid-19 shutdowns were largely implemented across the country.  As a result, we see the sharp spike immediately from about 4 percent to about 16 percent.
+
+In comparing this chart to the micromobility usage chart, it is clear that there is no noticeable correlation between this large spike in unemployment and micromobility usage.  Therefore, it does not appear that use of unemployment data, at least for the period of this project's review, will be useful in predicting micromobility usage.
+
+
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_seasonallinechart.png' width='50%'>
+   
+   <img src='https://github.com/dfdatascience/David_DATA606/blob/main/images/eda_unemploymentovertime.png' width='50%'>
 
 
 
