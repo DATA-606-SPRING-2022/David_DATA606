@@ -81,6 +81,7 @@ The project also uses supplemental economic (unemployment data) and historic wea
 | Field | 
 | --- |
 | City |
+| Date |
 | High Temperature |
 | Average and Peak 5 second Wind Speed|
 | Precipitation and Snow Amounts |
