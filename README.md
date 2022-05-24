@@ -3,7 +3,7 @@
 ## Spring 2022, Dr. Chaojie Wang
 ## David Fahnestock
 
-Video Presentation: <a href='https://youtu.be/VnXqnem_Cl8'>Video Link</a><br />
+Video Presentation: <a href='https://youtu.be/XDdARKZQE2w'>Video Link</a><br />
 PowerPoint: <a href='https://github.com/dfdatascience/David_DATA606/blob/main/Presentations/CapstoneSpring2022_PowerPointPresentation-Micromobility.pdf'>Slides</a><br />
 
 ## Subject Overview
